@@ -1,0 +1,10 @@
+{
+  "image": "ghcr.io/mats16/devcontainer-for-aws-amplify:latest",
+  "postCreateCommand": "curl -L https://github.com/gohugoio/hugo/releases/download/v0.97.0/hugo_0.97.0_Linux-64bit.tar.gz | tar zx -C /usr/local/bin",
+  "mounts": [
+      "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
+  ],
+  "extensions": [
+      "dbaeumer.vscode-eslint"
+  ]
+}
