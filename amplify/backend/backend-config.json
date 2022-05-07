@@ -1,0 +1,9 @@
+{
+  "custom": {
+    "HugoContentStore": {
+      "service": "customCDK",
+      "providerPlugin": "awscloudformation"
+    }
+  },
+  "function": {}
+}
