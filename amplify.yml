@@ -1,15 +1,15 @@
 version: 1
 env:
   variables:
-    AMPLIFY_CLI_VERSION: 8.1.0
-#backend:
-#  phases:
-#    preBuild:
-#      commands:
-#        - npm i -g @aws-amplify/cli@${AMPLIFY_CLI_VERSION}
-#    build:
-#      commands:
-#        - amplifyPush --simple
+    VERSION_AMPLIFY_CLI: 8.1.0
+backend:
+  phases:
+    preBuild:
+      commands:
+        - npm i -g @aws-amplify/cli@${VERSION_AMPLIFY_CLI}
+    build:
+      commands:
+        - amplifyPush --simple
 frontend:
   phases:
     #preBuild:
