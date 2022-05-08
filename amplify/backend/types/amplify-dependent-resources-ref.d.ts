@@ -1,7 +1,1 @@
-export type AmplifyDependentResourcesAttributes = {
-    "custom": {
-        "HugoContentStore": {
-            "BucketName": "string"
-        }
-    }
-}
+export type AmplifyDependentResourcesAttributes = {}

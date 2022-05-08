@@ -4,6 +4,5 @@
       "service": "customCDK",
       "providerPlugin": "awscloudformation"
     }
-  },
-  "function": {}
+  }
 }

@@ -2,6 +2,7 @@ import * as cdk from 'aws-cdk-lib';
 import * as AmplifyHelpers from '@aws-amplify/cli-extensibility-helper';
 import { AmplifyDependentResourcesAttributes } from '../../types/amplify-dependent-resources-ref';
 import * as s3 from 'aws-cdk-lib/aws-s3';
+import * as sqs from 'aws-cdk-lib/aws-sqs';
 import { Construct } from 'constructs';
 
 export class cdkStack extends cdk.Stack {
@@ -14,11 +15,14 @@ export class cdkStack extends cdk.Stack {
     });
     /* AWS CDK code goes here - learn more: https://docs.aws.amazon.com/cdk/latest/guide/home.html */
     
-    const bucket = new s3.Bucket(this, 'Bucket', { encryption: s3.BucketEncryption.S3_MANAGED });
+    new sqs.Queue(this, 'Queue');
 
-    new cdk.CfnOutput(this, 'BucketName', {
-      value: bucket.bucketName
-    })
+    //const projectInfo = AmplifyHelpers.getProjectInfo();
+
+    //const bucket = new s3.Bucket(this, 'Bucket', {
+    //  bucketName: `amplify-${projectInfo.projectName.toLowerCase()}-${projectInfo.envName}-content`,
+    //  encryption: s3.BucketEncryption.S3_MANAGED,
+    //});
 
     // Access other Amplify Resources 
     /*

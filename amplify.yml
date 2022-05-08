@@ -1,12 +1,6 @@
 version: 1
-env:
-  variables:
-    VERSION_AMPLIFY_CLI: 8.1.0
 backend:
   phases:
-    preBuild:
-      commands:
-        - npm i -g @aws-amplify/cli@${VERSION_AMPLIFY_CLI}
     build:
       commands:
         - amplifyPush --simple
@@ -18,9 +12,10 @@ frontend:
     build:
       commands:
         - env
+        - cd src
         - hugo --buildDrafts
   artifacts:
-    baseDirectory: public
+    baseDirectory: src/public
     files:
       - '**/*'
   cache:
